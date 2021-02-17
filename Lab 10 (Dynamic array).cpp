@@ -1,26 +1,26 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//Функция ввода элементов в динамический массив
+//Р¤СѓРЅРєС†РёСЏ РІРІРѕРґР° СЌР»РµРјРµРЅС‚РѕРІ РІ РґРёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ
 void in(string*& arr, int N, int i = 0)
 {
 	while (i < N) {
-		cout << "Введиет строку: ";
+		cout << "Р’РІРµРґРёРµС‚ СЃС‚СЂРѕРєСѓ: ";
 		cin >> arr[i];
 		i++;
 		}
 };
-//Функция вывода элемнтов в динамического массива
+//Р¤СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° СЌР»РµРјРЅС‚РѕРІ РІ РґРёРЅР°РјРёС‡РµСЃРєРѕРіРѕ РјР°СЃСЃРёРІР°
 void out(string*& arr, int N, int i = 0) {
 	while (i < N) {
 		cout << arr[i] << endl;
 		i++;
 	}
 };
-//Функция проверки первого элемента массива
+//Р¤СѓРЅРєС†РёСЏ РїСЂРѕРІРµСЂРєРё РїРµСЂРІРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР°
 bool Check(string row) {
 	bool otvet = false;
-	string check = { "Аа" };
+	string check = { "РђР°" };
 	string stroka = row;
 	for (int i = 0; i < size(check); i++) {
 		if (stroka[0] == check[i]) {
@@ -34,15 +34,15 @@ int main()
 	system("chcp 1251");
 	int size=-1,counter=0, i, j=0;
 	while (size < 1) {
-		cout << "\nВведите кол-во строк: ";
+		cout << "\nР’РІРµРґРёС‚Рµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє: ";
 		cin >> size;
 		if (size < 1) {
-			cout << "Недопустимое кол-во строк!";
+			cout << "РќРµРґРѕРїСѓСЃС‚РёРјРѕРµ РєРѕР»-РІРѕ СЃС‚СЂРѕРє!";
 		}
 	}
 	string* stroka = new string[size];
 	in(stroka, size);
-	cout << "\nМассив строк:\n";
+	cout << "\nРњР°СЃСЃРёРІ СЃС‚СЂРѕРє:\n";
 	out(stroka, size);
 	for (i = 0; i < size; i++) {
 		if (Check(stroka[i]) == true) {
@@ -51,10 +51,10 @@ int main()
 		}
 	}
 	if (counter == size) {
-		cout << "\nВсе строки в массиве начинаются на 'а'!\n";
+		cout << "\nР’СЃРµ СЃС‚СЂРѕРєРё РІ РјР°СЃСЃРёРІРµ РЅР°С‡РёРЅР°СЋС‚СЃСЏ РЅР° 'Р°'!\n";
 	}
 	else if (counter == 0) {
-		cout << "\nВ массиве нет строк начинающихся на 'а'!\n";
+		cout << "\nР’ РјР°СЃСЃРёРІРµ РЅРµС‚ СЃС‚СЂРѕРє РЅР°С‡РёРЅР°СЋС‰РёС…СЃСЏ РЅР° 'Р°'!\n";
 	}
 	else { 
 		string* row = new string[size - counter];
@@ -65,7 +65,7 @@ int main()
 			}
 		}
 		delete[] stroka;
-		cout << "\nКол-во удалённых строк = "<< counter <<"\nМассив строк после удаления:\n";
+		cout << "\nРљРѕР»-РІРѕ СѓРґР°Р»С‘РЅРЅС‹С… СЃС‚СЂРѕРє = "<< counter <<"\nРњР°СЃСЃРёРІ СЃС‚СЂРѕРє РїРѕСЃР»Рµ СѓРґР°Р»РµРЅРёСЏ:\n";
 		out(row, size - counter);
 		delete[] row;
 	}
